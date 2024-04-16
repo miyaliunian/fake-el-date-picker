@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <jn-date-picker
+      type="datetime"
+      ref="outTime"
+      placeholder="选择日期"
+      v-model="value"
+      format="yyyy-MM-dd HH:mm"
+      value-format="yyyy-MM-dd HH:mm"
+      style="width: 240px"
+    ></jn-date-picker>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import JnDatePicker from '@/components/date-picker';
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
-  }
-}
+    JnDatePicker,
+  },
+  data() {
+    return {
+      value: '',
+    };
+  },
+};
 </script>
